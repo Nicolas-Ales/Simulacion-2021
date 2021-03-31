@@ -83,8 +83,6 @@ def plot_1(m, mm, v, vm, des):
     plt.plot(mm)
     plt.legend()
 
-#segi de aca
-
     #Grafica de la varianza
     plt.subplot(2, 2, 3)
     plt.plot(v)
