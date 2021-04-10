@@ -38,6 +38,8 @@ def preplot():
     plt.legend(loc="upper right")
     plt.ylabel('FR para el numero ' + str(nro_elegido))
     plt.xlabel('n(numero de tiradas)')
+    plt.xlim(xmin=0)
+    plt.ylim(0,0.116)
 
 def main():
     seed(801)

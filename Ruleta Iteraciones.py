@@ -10,21 +10,21 @@ import matplotlib.ticker as tick
 import statistics as st
 from random import randint, seed
 
-#constantes que representan la ruleta
+# constantes que representan la ruleta
 n_muestras = 1000
 min_n = 0
 max_n = 36
 base = np.arange(37)
 
-#variables basadas en las constantes de la ruleta
+# variables basadas en las constantes de la ruleta
 fabs_esperada = n_muestras / len(base)
 fr_esperada = 1 / len(base)
 media_esperada = np.mean(base)
 varianza_esperada = np.var(base)
 desviacion_esperada = np.std(base)
 
-def iteracion():
 
+def iteracion():
     # listas para los datos almacenados
     data = []
     media = []
@@ -44,6 +44,7 @@ def iteracion():
 
     plot_1(media, media_media, varianza, varianza_media, desviacion)
 
+
 def preplot():
     # Grafica de media
     plt.subplot(2, 2, 1)
@@ -51,6 +52,8 @@ def preplot():
     plt.ylabel('Media')
     plt.title("Media")
     plt.plot([0, n_muestras], [media_esperada, media_esperada], label="media esperada")
+    plt.xlim(xmin=0)
+    plt.ylim(ymin=0,ymax=36)
 
     # Grafica de media de media
     plt.subplot(2, 2, 2)
@@ -58,6 +61,8 @@ def preplot():
     plt.ylabel('Media de la media')
     plt.title("Media de la media")
     plt.plot([0, n_muestras], [media_esperada, media_esperada], label="media esperada")
+    plt.xlim(xmin=0)
+    plt.ylim(ymin=0,ymax=36)
 
     # Grafica de la varianza
     plt.subplot(2, 2, 3)
@@ -65,41 +70,48 @@ def preplot():
     plt.xlabel('cantidad de tiradas')
     plt.ylabel('varianza')
     plt.plot([0, n_muestras], [varianza_esperada, varianza_esperada], label="varianza esperada")
+    plt.xlim(xmin=0)
+
 
     plt.subplot(2, 2, 4)
     plt.title('Desviacion estandar')
     plt.xlabel('cantidad de tiradas')
     plt.ylabel('Desviacion')
     plt.plot([0, n_muestras], [desviacion_esperada, desviacion_esperada], label="desviacion esperada")
+    plt.xlim(xmin=0)
+    plt.ylim(ymin=0,ymax=15)
 
 def plot_1(m, mm, v, vm, des):
-    #Grafica de media
+    # Grafica de media
     plt.subplot(2, 2, 1)
     plt.plot(m)
     plt.legend()
 
-    #Grafica de media de media
+    # Grafica de media de media
     plt.subplot(2, 2, 2)
     plt.plot(mm)
     plt.legend()
 
-    #Grafica de la varianza
+    # Grafica de la varianza
     plt.subplot(2, 2, 3)
     plt.plot(v)
     plt.legend()
 
-    #Grafica de la desviacion estandar
+    # Grafica de la desviacion estandar
     plt.subplot(2, 2, 4)
     plt.plot(des)
     plt.legend()
 
+
 def main():
     seed(801)
     preplot()
-    for h in range(0,5):
+    for h in range(0, 5):
         iteracion()
-        #plot_frAbs(data)
-        #plot_frRel(data)
+        # plot_frAbs(data)
+        # plot_frRel(data)
+    plt.subplots_adjust(left=0.09, bottom=0.11, right=0.98, top=0.94, wspace=0.24, hspace=0.47)
+    plt.savefig('convergencia iteraciones')
     plt.show()
 
 

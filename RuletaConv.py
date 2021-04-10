@@ -77,9 +77,13 @@ def plot_1(m, mm, v, vm, des, i, fr):
     plt.xlabel('Cantidad de tiradas')
     plt.ylabel('Media')
     plt.title("Media")
+    plt.axhline(y=media_esperada + media_esperada * 0.02, color="yellow", linestyle='dashed')
+    plt.axhline(y=media_esperada - media_esperada * 0.02, color="yellow", linestyle='dashed')
     plt.plot(m, label="media")
     # plt.plot([0, n_muestras], [media_esperada, media_esperada], label="media esperada")
     plt.plot([0, i], [media_esperada, media_esperada], label="media esperada")
+    plt.xlim(xmin=0)
+    plt.ylim(ymin=0)
     plt.legend()
 
     # # Grafica de media de media
@@ -108,9 +112,13 @@ def plot_1(m, mm, v, vm, des, i, fr):
     plt.title('Varianza')
     plt.xlabel('cantidad de tiradas')
     plt.ylabel('varianza')
+    plt.axhline(y=varianza_esperada + varianza_esperada * 0.02, color="yellow", linestyle='dashed')
+    plt.axhline(y=varianza_esperada - varianza_esperada * 0.02, color="yellow", linestyle='dashed')
     plt.plot(v, label="varianza")
     # plt.plot([0, n_muestras], [varianza_esperada, varianza_esperada], label="varianza esperada")
     plt.plot([0, i], [varianza_esperada, varianza_esperada], label="varianza esperada")
+    plt.xlim(xmin=0)
+    plt.ylim(ymin=0)
     plt.legend()
 
     # Grafica de la desviacion estandar
@@ -118,9 +126,13 @@ def plot_1(m, mm, v, vm, des, i, fr):
     plt.title('Desviacion estandar')
     plt.xlabel('cantidad de tiradas')
     plt.ylabel('Desviacion')
+    plt.axhline(y=desviacion_esperada + desviacion_esperada * 0.02, color="yellow", linestyle='dashed')
+    plt.axhline(y=desviacion_esperada - desviacion_esperada * 0.02, color="yellow", linestyle='dashed')
     plt.plot(des, label="desviacion estandar")
     # plt.plot([0, n_muestras], [desviacion_esperada, desviacion_esperada], label="desviacion esperada")
     plt.plot([0, i], [desviacion_esperada, desviacion_esperada], label="desviacion esperada")
+    plt.xlim(xmin=0)
+    plt.ylim(ymin=0)
     plt.legend()
 
     # Grafica de Frecuencia Relativa del Nro_elegido
@@ -131,6 +143,9 @@ def plot_1(m, mm, v, vm, des, i, fr):
     plt.legend(loc="upper right")
     plt.ylabel('FR para el numero ' + str(nro_elegido))
     plt.xlabel('n(numero de tiradas)')
+    plt.xlim(xmin=0)
+    plt.ylim(ymin=0)
+
     plt.show()
 
 
@@ -157,7 +172,7 @@ def main():
                        converge(st.variance(data), varianza_esperada)
         if convergencia:
             j = j + 1
-            print(j)
+            #print(j)
         else:
             j = 0
 

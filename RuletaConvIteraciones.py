@@ -51,42 +51,71 @@ def plot_1(m, v, des, fr):
     plt.subplot(2, 2, 1)
     plt.plot(fr)
 
+def pre_plot():
+    # Grafica de media
+    plt.subplot(2, 2, 2)
+    plt.axhline(y=media_esperada + media_esperada * 0.02, color="yellow", linestyle='dashed')
+    plt.axhline(y=media_esperada - media_esperada * 0.02, color="yellow", linestyle='dashed')
+
+    # Grafica de la varianza
+    plt.subplot(2, 2, 3)
+    plt.axhline(y=varianza_esperada + varianza_esperada * 0.02, color="yellow", linestyle='dashed')
+    plt.axhline(y=varianza_esperada - varianza_esperada * 0.02, color="yellow", linestyle='dashed')
+
+    # Grafica de la desviacion estandar
+    plt.subplot(2, 2, 4)
+    plt.axhline(y=desviacion_esperada + desviacion_esperada * 0.02, color="yellow", linestyle='dashed')
+    plt.axhline(y=desviacion_esperada - desviacion_esperada * 0.02, color="yellow", linestyle='dashed')
+
+    # Grafica de Frecuencia Relativa del Nro_elegido
+    plt.subplot(2, 2, 1)
+    plt.axhline(y=fr_esperada + fr_esperada * 0.02, color="yellow", linestyle='dashed')
+    plt.axhline(y=fr_esperada - fr_esperada * 0.02, color="yellow", linestyle='dashed')
+
 def post_plot():
     # Grafica de media
     plt.subplot(2, 2, 2)
     plt.xlabel('Cantidad de tiradas')
     plt.ylabel('Media')
     plt.title("Media")
-    plt.plot([0, i], [media_esperada, media_esperada], label="media esperada")
+    plt.axhline(y=media_esperada, label="media esperada")
     plt.legend()
 
+    plt.xlim(xmin=0)
+    plt.ylim(ymin=0)
     # Grafica de la varianza
     plt.subplot(2, 2, 3)
     plt.title('Varianza')
     plt.xlabel('cantidad de tiradas')
     plt.ylabel('varianza')
-    plt.plot([0, i], [varianza_esperada, varianza_esperada], label="varianza esperada")
+    plt.axhline(y=varianza_esperada, label="varianza esperada")
     plt.legend()
-
+    plt.xlim(xmin=0)
+    plt.ylim(ymin=0)
     # Grafica de la desviacion estandar
     plt.subplot(2, 2, 4)
     plt.title('Desviacion estandar')
     plt.xlabel('cantidad de tiradas')
     plt.ylabel('Desviacion')
-    plt.plot([0, i], [desviacion_esperada, desviacion_esperada], label="desviacion esperada")
+    plt.axhline(y=desviacion_esperada, label="desviacion esperada")
     plt.legend()
-
+    plt.xlim(xmin=0)
+    plt.ylim(ymin=0)
     # Grafica de Frecuencia Relativa del Nro_elegido
     plt.subplot(2, 2, 1)
     plt.title('Frecuencia Relativa')
-    plt.axhline(y=1 / len(base),label="FR Esperada")
-    #plt.plot([0, i], [1 / len(base), 1 / len(base)], label="FR Esperada")
+    plt.axhline(y=1 / len(base), label="FR Esperada")
+    # plt.plot([0, i], [1 / len(base), 1 / len(base)], label="FR Esperada")
     plt.legend(loc="upper right")
     plt.ylabel('FR para el numero ' + str(nro_elegido))
     plt.xlabel('n(numero de tiradas)')
+    plt.xlim(xmin=0)
+    plt.ylim(ymin=0, ymax=0.34)
+    plt.subplots_adjust(left=0.09, bottom=0.11, right=0.98, top=0.94, wspace=0.24, hspace=0.47)
     plt.show()
 
-def ietracion():
+
+def iteracion():
     data = []
     media = []
     varianza = []
@@ -112,21 +141,22 @@ def ietracion():
                        converge(st.variance(data), varianza_esperada)
         if convergencia:
             j = j + 1
-            #print(j)
         else:
             j = 0
 
         if j >= 100:
+            print("Numero de Lanzamientos: ", i)
             break
-    print("Numero de Lanzamientos: ", i)
+
     plot_1(media, varianza, desviacion, fr)
+
 
 def main():
     seed(801)
-    for k in range(0,5):
-        ietracion()
+    pre_plot()
+    for k in range(0, 5):
+        iteracion()
     post_plot()
-
 
 
 main()
