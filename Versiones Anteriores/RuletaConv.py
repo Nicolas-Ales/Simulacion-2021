@@ -55,20 +55,20 @@ def converge(x, y):
 #     plt.show()
 
 
-def plot_frRel(d,i):  # graficar histograma de frecuencias relativas
-    fig, ax = plt.subplots()
-    ax.hist(d, bins=max_n + 1, edgecolor="grey")
-    ax.yaxis.set_major_formatter(tick.FuncFormatter(cambiar_y))  # para cambiar los valores mostrados en y
-    ax.axhline(y=fr_esperada * i, color="yellow",
-               label="frecuencia esperada")  # se multiplica x 1000 la frecuencia por la modificacion anterior
-    fig.tight_layout()
-    ax.set_xlabel('Numeros de la ruleta')
-    ax.set_ylabel('Cantidad / 100')
-    plt.title("Histograma de frecuencia relativa")
-    plt.legend(handlelength=4)
-    plt.show()
-    print(d)
-    print(i)
+# def plot_frRel(d,i):  # graficar histograma de frecuencias relativas
+#     fig, ax = plt.subplots()
+#     ax.hist(d, bins=max_n + 1, edgecolor="grey")
+#     ax.yaxis.set_major_formatter(tick.FuncFormatter(cambiar_y))  # para cambiar los valores mostrados en y
+#     ax.axhline(y=fr_esperada * i, color="yellow",
+#                label="frecuencia esperada")  # se multiplica x 1000 la frecuencia por la modificacion anterior
+#     fig.tight_layout()
+#     ax.set_xlabel('Numeros de la ruleta')
+#     ax.set_ylabel('Cantidad / 100')
+#     plt.title("Histograma de frecuencia relativa")
+#     plt.legend(handlelength=4)
+#     plt.show()
+#     print(d)
+#     print(i)
 
 
 def plot_1(m, mm, v, vm, des, i, fr):
@@ -86,26 +86,6 @@ def plot_1(m, mm, v, vm, des, i, fr):
     plt.ylim(ymin=0)
     plt.legend()
 
-    # # Grafica de media de media
-    # plt.xlabel('Cantidad de tiradas')
-    # plt.ylabel('Media de la media')
-    # plt.title("Media de la media")
-    # plt.plot(mm, label="media de la media")
-    # # plt.plot([0, n_muestras], [media_esperada, media_esperada], label="media esperada")
-    # plt.plot([0, i], [media_esperada, media_esperada], label="media esperada")
-    # plt.legend()
-    # plt.show()
-
-    # # Grafica que relaciona media y media de media
-    # plt.plot(list(range(len(m))), m, label="media")
-    # plt.plot(list(range(len(mm))), mm, color='r', linestyle="-.", label="media de media")
-    # # plt.plot([0, n_muestras], [media_esperada, media_esperada], label="media esperada")
-    # plt.plot([0, i], [media_esperada, media_esperada], label="media esperada")
-    # plt.xlabel('Cantidad de tiradas')
-    # plt.ylabel('Medias')
-    # plt.title("Relacion entre media y media de media")
-    # plt.legend()
-    # plt.show()
 
     # Grafica de la varianza
     plt.subplot(2, 2, 3)
@@ -172,7 +152,6 @@ def main():
                        converge(st.variance(data), varianza_esperada)
         if convergencia:
             j = j + 1
-            #print(j)
         else:
             j = 0
 
