@@ -1,0 +1,26 @@
+Lamnda = 2 	 Mu = 2
+\begin{itemize}
+	\item Utilización de servidor: 96.86000000%
+	\itemPromedio Usuarios en el sistema: 39.26915000
+	\itemPromedio Usuarios en cola: 38.30055000
+	\itemTiempo promedio en el sistema: 19.30039236
+	\itemTiempo promedio en de espera: 18.80326059
+	\item probabilidad de n clientes en cola:
+	\begin{itemize}
+		\item 0 clientes en cola: 0.0608
+		\item 1 cliente en cola: 0.0290
+		\item 2 clientes en cola: 0.0292
+		\item 3 clientes en cola: 0.0281
+		\item 4 clientes en cola: 0.0254
+		\item 5 clientes en cola: 0.0272
+		\item 6 clientes en cola: 0.7760
+	\end{itemize}
+	\item probabilidad de denegación de servicio con una cola finita de
+	\begin{itemize}
+		\item 0 clientes: 0.9393
+		\item 2 clientes: 0.8810
+		\item 5 clientes: 0.8003
+		\item 10 clientes: 0.6825
+		\item 50 clientes: 0.2631
+	 \end{itemize}
+\end{itemize}
