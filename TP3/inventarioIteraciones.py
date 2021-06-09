@@ -43,7 +43,8 @@ def simulacion_inventario(env, min_inventario, max_inventario):
 def orden(env):
     global inventario, min_inventario, max_inventario
     while True:
-        env.process(hacer_orden(env, max_inventario))
+        if inventario < min_inventario:
+            env.process(hacer_orden(env, max_inventario))
         yield env.timeout(dias_entre_pedidos)
 
 
