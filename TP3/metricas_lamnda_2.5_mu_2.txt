@@ -1,26 +1,26 @@
 Lamnda = 2.5 	 Mu = 2
 \begin{itemize}
-	\item Utilización de servidor: 99.71500000%
-	\itemPromedio Usuarios en el sistema: 257.96920000
-	\itemPromedio Usuarios en cola: 256.97205000
-	\itemTiempo promedio en el sistema: 101.41524964
-	\itemTiempo promedio en de espera: 100.91344590
+	\item Utilización de servidor: 99.79500000%
+	\itemPromedio Usuarios en el sistema: 231.37270000
+	\itemPromedio Usuarios en cola: 230.37475000
+	\itemTiempo promedio en el sistema: 91.57001831
+	\itemTiempo promedio en de espera: 91.08071615
 	\item probabilidad de n clientes en cola:
 	\begin{itemize}
-		\item 0 clientes en cola: 0.0053
-		\item 1 cliente en cola: 0.0030
-		\item 2 clientes en cola: 0.0030
-		\item 3 clientes en cola: 0.0030
-		\item 4 clientes en cola: 0.0032
-		\item 5 clientes en cola: 0.0029
-		\item 6 clientes en cola: 0.9762
+		\item 0 clientes en cola: 0.0046
+		\item 1 cliente en cola: 0.0018
+		\item 2 clientes en cola: 0.0016
+		\item 3 clientes en cola: 0.0021
+		\item 4 clientes en cola: 0.0015
+		\item 5 clientes en cola: 0.0015
+		\item 6 clientes en cola: 0.9859
 	\end{itemize}
 	\item probabilidad de denegación de servicio con una cola finita de
 	\begin{itemize}
-		\item 0 clientes: 0.9947
-		\item 2 clientes: 0.9887
-		\item 5 clientes: 0.9797
-		\item 10 clientes: 0.9653
-		\item 50 clientes: 0.8816
+		\item 0 clientes: 0.9954
+		\item 2 clientes: 0.9921
+		\item 5 clientes: 0.9870
+		\item 10 clientes: 0.9825
+		\item 50 clientes: 0.8849
 	 \end{itemize}
 \end{itemize}

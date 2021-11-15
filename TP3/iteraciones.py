@@ -3,8 +3,8 @@ import numpy as np
 from matplotlib.ticker import PercentFormatter
 
 iteraciones = 10
-lam = 2.5
-mu = 2
+lam = 2
+mu = 4
 
 
 def generate_interarrival():

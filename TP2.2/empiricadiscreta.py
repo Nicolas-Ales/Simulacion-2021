@@ -16,13 +16,13 @@ plt.show()
 
 
 xNP = np.random.poisson(lamd, 10000)
-plt.hist(xNP, facecolor='orange', density=True, align='mid', rwidth=0.9, bins=30,
-         label='distribucion generada por NunPy')
-# plt.xlim(xmin=0)
-titulo = 'Distribucion Generada con numpy.hypergeometric(' + str(lamd) + ')'
-plt.title(titulo)
-plt.savefig('empiricadiscretaNP')
-plt.show()
+# plt.hist(xNP, facecolor='orange', density=True, align='mid', rwidth=0.9, bins=30,
+#          label='distribucion generada por NunPy')
+# # plt.xlim(xmin=0)
+# titulo = 'Distribucion Generada con numpy.hypergeometric(' + str(lamd) + ')'
+# plt.title(titulo)
+# plt.savefig('empiricadiscretaNP')
+# plt.show()
 
 print('')
 m = np.mean(x)
@@ -33,6 +33,6 @@ v = np.var(x)
 v1 = lamd
 print('Varianza: ', v, '\nVarianza Esperada:', v1)
 
-mnp = np.mean(xNP)
-vnp = np.var(xNP)
-print('Media: ', mnp, '\nVarianza: ', vnp)
+# mnp = np.mean(xNP)
+# vnp = np.var(xNP)
+# print('Media: ', mnp, '\nVarianza: ', vnp)
